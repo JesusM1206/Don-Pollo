@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Don Pollo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales y fondo */
+        body {
+            background-color: #121212; /* Fondo oscuro */
+            color: #ffffff;
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Contenedor principal estilo banner */
+        .menu-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            border: 5px solid #333; /* Borde sutil opcional */
+            padding: 30px;
+            background-color: #1a1a1a;
+        }
+
+        /* Colores reutilizables */
+        .text-yellow { color: #facc15; }
+        .text-pink { color: #e91e63; }
+        .text-white { color: #ffffff; }
+
+        /* Fuentes específicas */
+        .font-anton { font-family: 'Anton', sans-serif; letter-spacing: 1px; }
+        .font-bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+
+        /* --- COLUMNA 1: Logo y Combos --- */
+        .col-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .combos-section {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .combos-title {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 4.5rem;
+            margin: 0;
+            padding-right: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .combos-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .combo-item h3 {
+            font-size: 1.8rem;
+            margin: 0 0 5px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .combo-item p {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* --- COLUMNA 2: Precios y Extras --- */
+        .col-center {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-price h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .main-price h1 {
+            font-size: 4rem;
+            margin: -10px 0 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .extras-list {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .desde-1pz {
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .platillo-section h3 {
+            font-size: 2rem;
+            margin: 0 0 5px 0;
+        }
+
+        .platillo-section p {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        /* --- COLUMNA 3: Frase promocional --- */
+        .col-right {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .slogan {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .slogan-small {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .slogan-large {
+            font-size: 4rem;
+            margin: 0;
+            line-height: 0.9;
+        }
+
+        .slogan-medium {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+
+        .slogan-footer {
+            font-size: 2rem;
+            margin-top: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Responsividad para móviles */
+        @media (max-width: 900px) {
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+            .combos-title {
+                writing-mode: horizontal-tb;
+                transform: none;
+                font-size: 3rem;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .combos-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        
+        <div class="col-left">
+            <img src="logo.png" alt="Don Pollo Logo" class="logo-placeholder" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<h1 class=\'font-anton text-yellow\' style=\'font-size:3rem; margin-bottom:20px;\'>DON POLLO</h1>');">
+            
+            <div class="combos-section">
+                <h2 class="combos-title font-anton text-yellow">COMBOS</h2>
+                <div class="combos-list">
+                    <div class="combo-item">
+                        <h3 class="font-anton text-yellow">COMBO 1</h3>
+                        <p class="text-white">1 KG DE POLLO, 1/2 DE SOPA Y PAPAS<br>A LA FRANCESA <span class="text-white"> $ 210.00</span></p>
+                    </div>
+                    <div class="combo-item">
+                        <h3 class="font-anton text-yellow">COMBO 2</h3>
+                        <p class="text-white">1 1/2 KG DE POLLO, 1/2 DE SOPA Y PAPAS<br>A LA FRANCESA <span class="text-white"> $ 290.00</span></p>
+                    </div>
+                    <div class="combo-item">
+                        <h3 class="font-anton text-yellow">COMBO 3</h3>
+                        <p class="text-white">2 KG DE POLLO, 1/2 DE SOPA Y PAPAS<br>A LA FRANCESA <span class="text-white"> $ 360.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-center">
+            <div class="main-price">
+                <h2 class="font-anton text-yellow">KILO DE POLLO</h2>
+                <h1 class="font-anton text-white">$ 150.00</h1>
+            </div>
+            
+            <div class="extras-list text-white">
+                TOTOPOS $ 20<br>
+                ORDEN DE PAPAS $ 50<br>
+                1/2 SOPA FRIA $ 40
+            </div>
+
+            <h2 class="font-anton text-yellow desde-1pz">TE VENDEMOS<br>DESDE 1 PZ</h2>
+
+            <div class="platillo-section">
+                <h3 class="font-anton text-yellow">PLATILLO</h3>
+                <p class="text-white">3 PZAS DE POLLO<br>SOPA Y PAPAS $ 100</p>
+            </div>
+        </div>
+
+        <div class="col-right">
+            <div class="slogan font-anton">
+                <p class="slogan-small text-white">QUE HOY DESCANSE</p>
+                <p class="slogan-large text-white">LA REYNA</p>
+                <p class="slogan-medium text-white">DE LA CASA</p>
+                <p class="slogan-small text-white" style="font-family: 'Oswald', sans-serif;">POR QUE AQUI<br>COCINAMOS</p>
+                <p class="slogan-large text-white">PARA ELLA</p>
+            </div>
+            
+            <p class="slogan-footer font-anton text-pink">CON DIOS TODO SE PUEDE</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
